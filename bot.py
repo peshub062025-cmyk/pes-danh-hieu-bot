@@ -6,7 +6,7 @@ from flask import Flask
 from threading import Thread
 import os
 
-TOKEN = "DISCORD_TOKEN"
+TOKEN = os.getenv("DISCORD_TOKEN")
 
 ADMIN_ID = 1222370876952154115
 ALLOWED_CHANNEL = 1517725978208764106
