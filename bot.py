@@ -2,6 +2,8 @@ import discord
 from discord.ext import commands
 import sqlite3
 import shlex
+from flask import Flask
+from threading import Thread
 
 TOKEN = "DISCORD_TOKEN"
 
@@ -500,5 +502,18 @@ async def bangvang(ctx):
         rank += 1
 
     await ctx.send(msg)
+app = Flask(__name__)
+
+@app.route("/")
+def home():
+    return "Bot is running!"
+
+def run_web():
+    app.run(
+        host="0.0.0.0",
+        port=int(os.environ.get("PORT", 10000))
+    )
+
+Thread(target=run_web).start()
 
 bot.run(TOKEN)
