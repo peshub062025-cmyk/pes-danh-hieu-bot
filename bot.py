@@ -4,6 +4,7 @@ import sqlite3
 import shlex
 from flask import Flask
 from threading import Thread
+import os
 
 TOKEN = "DISCORD_TOKEN"
 
