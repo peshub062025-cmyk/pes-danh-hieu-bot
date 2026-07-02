@@ -106,7 +106,7 @@ async def solo(ctx, season: int, *, players):
 🥈 {silver}
 🥉 {bronze}
 
-Đã lưu thành công."""
+Xin chúc mừng các PES thủ 🎉."""
         )
 
     except sqlite3.IntegrityError:
@@ -205,7 +205,7 @@ async def clan(ctx, season: int, *, data):
     for p in players:
         msg += f"🥇 {p}\n"
 
-    msg += "\nĐã lưu thành công."
+    msg += "\nChúc mừng clan vô địch 🎉."
 
     await ctx.send(msg)
 @bot.command()
@@ -408,7 +408,7 @@ async def tt(ctx, *, player):
     await ctx.send(f"""
 🏆 THÀNH TÍCH {player}
 
-📊 SOLO
+⚽ SOLO
 🥇 {solo_gold}
 🥈 {solo_silver}
 🥉 {solo_bronze}
